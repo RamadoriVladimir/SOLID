@@ -15,7 +15,7 @@ public:
     void draw() { std::cout << "Dibujando cuadrado\n"; }
 };
 
-// Esta función viola OCP porque necesita modificarse para cada nueva forma
+// Esta función viola OCP 
 void drawAllShapes1(const std::vector<void*>& shapes) {
     for (auto shape : shapes) {
         if (typeid(shape) == typeid(Circle1*))

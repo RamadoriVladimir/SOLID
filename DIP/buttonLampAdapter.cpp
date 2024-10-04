@@ -54,7 +54,7 @@ public:
 
     void PressButton(bool isOn)
     {
-        if (!isOn)
+        if (isOn)
         {
             client.TurnOn(); 
         }

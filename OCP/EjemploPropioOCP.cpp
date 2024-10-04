@@ -49,7 +49,7 @@ int main() {
     invoice.addProduct(Product("Laptop", 1000.0));
     invoice.addProduct(Product("Mouse", 50.0));
 
-    std::cout << "Total Invoice: " << invoice.calculateTotal() << std::endl;
+    std::cout << "Total: " << invoice.calculateTotal() << std::endl;
     return 0;
 }
 */
@@ -65,7 +65,7 @@ public:
 class FixedTax : public TaxStrategy {
 public:
     double calculateTax(double amount) const override {
-        return amount * 0.1; // Impuesto fijo del 10%
+        return amount * 0.1; 
     }
 };
 
@@ -73,7 +73,7 @@ public:
 class VariableTax : public TaxStrategy {
 public:
     double calculateTax(double amount) const override {
-        return amount * (amount > 500 ? 0.15 : 0.05); // 15% si es mayor a 500, 5% de lo contrario
+        return amount * (amount > 500 ? 0.15 : 0.05); 
     }
 };
 
@@ -107,13 +107,13 @@ public:
         for (const auto& product : products) {
             total += product.getPrice();
         }
-        total += taxStrategy.calculateTax(total); // Uso de estrategia de impuestos
+        total += taxStrategy.calculateTax(total); 
         return total;
     }
 
 private:
     std::vector<Product> products;
-    const TaxStrategy& taxStrategy; // Estrategia de impuestos utilizada
+    const TaxStrategy& taxStrategy; 
 };
 
 int main() {

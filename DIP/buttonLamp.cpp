@@ -1,5 +1,4 @@
 /*Este ejemplo muestra una implementación directa donde un objeto Button controla un objeto Lamp.(Sin aplicar DIP)
-#include <iostream>
 
 // Clase Lamp (Lámpara)
 class Lamp {
@@ -74,7 +73,7 @@ public:
     void DetectState()
     {
         bool isOn = GetButtonState();
-        if (!isOn)
+        if (isOn)
         {
             client.TurnOn(); 
         }
